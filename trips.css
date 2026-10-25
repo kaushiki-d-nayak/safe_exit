@@ -1,0 +1,18 @@
+#tripForm .live-field-row{margin-bottom:15px}
+.trip-list{display:grid;gap:11px}
+.trip-card{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff}
+.trip-card.past{background:#fafbf8}
+.trip-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.trip-card h3{font-size:14px;margin:0 0 4px;overflow-wrap:anywhere}
+.trip-where{font-size:12px;font-weight:700;color:#347354;margin:0;overflow-wrap:anywhere}
+.trip-dates{font-size:11px;color:var(--muted);margin:6px 0 0}
+.trip-details{display:grid;gap:5px;margin:12px 0 0;padding:11px 0 0;border-top:1px solid #edf0eb}
+.trip-details p{font-size:11px;line-height:1.6;color:#53675d;margin:0;overflow-wrap:anywhere;white-space:pre-line}
+.trip-details b{color:#425d52;font-weight:800}
+.trip-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.trip-actions .outline-btn{padding:8px 11px;font-size:11px}
+.next-trip{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:-8px 0 16px;flex-wrap:wrap}
+.next-trip .trip-icon{height:39px;width:39px;border-radius:12px;display:grid;place-items:center;font-size:18px;background:var(--mint);flex-shrink:0}
+.next-trip-info{display:flex;gap:13px;align-items:center;min-width:0}
+.next-trip-info p{font-size:11px;color:var(--muted);margin:4px 0 0}
+@media(max-width:650px){.topline{flex-direction:column}.next-trip{margin-top:0}}

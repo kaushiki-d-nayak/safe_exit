@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#174b3c">
+<meta name="description" content="SafeExit helps travellers prepare for suspicious booking messages, unexpected changes, and moments when they need help.">
+<meta name="siteName" content="SafeExit">
+<meta name="siteDescription" content="Travel with a Plan B. Verify booking messages, prepare backup plans, and stay connected with a trusted contact.">
+<meta property="og:site_name" content="SafeExit">
+<meta property="og:title" content="SafeExit — Travel with a Plan B">
+<meta property="og:description" content="Prepare for unexpected changes and stay connected with a trusted contact.">
+<title>SafeExit — Travel with a Plan B</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="safety.css">
+<link rel="stylesheet" href="trips.css">
+</head>
+<body>
+<header class="app-header">
+  <a class="brand" href="#" aria-label="SafeExit home" data-go="home"><div class="brand-mark">s<span>.</span></div><div><div class="brand-name">safe<em>exit</em></div><div class="brand-sub">TRAVEL WITH A PLAN B</div></div></a>
+  <div class="header-right"><span class="header-note">A safer way to explore.</span><div class="avatar" aria-hidden="true">S</div></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="eyebrow side-label">YOUR SAFETY SPACE</div>
+    <nav class="nav-list" aria-label="Main navigation">
+      <button class="nav-btn" data-page="safety"><span class="nav-icon" aria-hidden="true">◎</span>Live safety <span class="new-tag">LIVE</span></button>
+      <button class="nav-btn active" data-page="home"><span class="nav-icon">⌂</span>Trip overview</button>
+      <button class="nav-btn" data-page="trips"><span class="nav-icon" aria-hidden="true">✈</span>My trips <span class="new-tag">NEW</span></button>
+      <button class="nav-btn" data-page="verify"><span class="nav-icon">◈</span>Verify a message <span class="new-tag">NEW</span></button>
+      <button class="nav-btn" data-page="plan"><span class="nav-icon">↗</span>Plan B protocol</button>
+      <button class="nav-btn" data-page="help"><span class="nav-icon">♡</span>Discreet help</button>
+    </nav>
+    <div class="sidebar-card"><div class="spark">✳</div><strong>Safety, on your terms.</strong><p>Your choices. Your contacts. Your next move.</p></div>
+    <div class="sidebar-foot">Live safety · Private, expiring links.<br>Planning tools and private help cards.</div>
+  </aside>
+  <main class="main">
+    <nav class="mobile-nav" aria-label="Mobile navigation"><button data-page="safety">Live safety</button><button class="active" data-page="home">Overview</button><button data-page="trips">My trips</button><button data-page="verify">Verify</button><button data-page="plan">Plan B</button><button data-page="help">Discreet help</button></nav>
+    <section class="page" id="page-safety" aria-labelledby="liveTitle">
+      <div class="safety-intro"><div><div class="live-kicker"><span class="live-dot" aria-hidden="true"></span> SAFEEXIT / STAY CONNECTED</div><h1 class="page-title" id="liveTitle">Your journey. A trusted pair of eyes.</h1><p class="safety-lead" id="liveLead">Share your latest location, set a check-in deadline, and keep a trusted person in the loop. You choose when sharing begins and ends.</p></div><span class="pill green" id="liveMode">REAL SHARING</span></div>
+      <div id="liveNetwork" class="live-banner pending hidden" role="status"></div>
+      <div id="liveFeedback" class="live-banner" role="status" aria-live="polite"></div>
+      <div id="liveLoading" class="live-panel"><div class="live-loading">Checking for an active safety session…</div><div class="live-skeleton"></div><div class="live-skeleton" style="width:45%"></div></div>
+      <div id="liveSetup" class="safety-layout hidden">
+        <form id="liveCreate" class="live-panel"><span class="eyebrow">START WITH CONSENT</span><h2 style="margin-top:12px">A private link. A clear end time.</h2><p>Send your link to someone you trust. They can view the latest saved location and acknowledge alerts on their dashboard.</p>
+          <div class="live-field-row"><div><label class="label" for="liveLabel">Trip label</label><input id="liveLabel" class="field" maxlength="60" required placeholder="e.g. Walk back to my hotel" autocomplete="off"></div><div><label class="label" for="liveDuration">Link expires in</label><select id="liveDuration" class="field"><option value="30">30 minutes</option><option value="60" selected>1 hour</option><option value="120">2 hours</option><option value="240">4 hours</option></select></div></div>
+          <label class="live-consent"><input id="liveConsent" type="checkbox" required><span>I agree to share my latest precise location with anyone holding my private link until I end sharing or the link expires. Only the latest point is stored, not my route history.</span></label>
+          <button class="primary full" id="liveStart" type="submit">Start safety session</button><p class="field-help">Your browser asks for location permission. If you decline, check-in timers and SOS still work without a location.</p>
+        </form>
+        <div class="live-panel"><h2>A better safety habit</h2><div class="live-rule"><span>01</span><div><strong>Ask your contact to open the link</strong><p>Alerts appear on their dashboard while it is open. No SMS, email, or emergency dispatch is sent.</p></div></div><div class="live-rule"><span>02</span><div><strong>Keep this page open</strong><p>Phone locks, background tabs, and lost signal can pause location updates. We show the last update and accuracy.</p></div></div><div class="live-rule"><span>03</span><div><strong>Have a fallback</strong><p>Agree on a check-in and what to do if updates stop. In immediate danger in India, <a href="tel:112" class="live-call">call 112</a>.</p></div></div></div>
+      </div>
+      <div id="liveDashboard" class="safety-layout hidden">
+        <div class="live-panel"><div class="panel-title-row"><div><span class="eyebrow" id="liveRole">YOUR SAFETY SESSION</span><h2 id="liveTrip" style="margin-top:9px"></h2></div><span id="liveLinkState" class="pill green">LINK ACTIVE</span></div>
+          <div class="live-location"><div class="eyebrow">LATEST SAVED LOCATION</div><h3 id="liveCoordinates">Waiting for a location</h3><p id="liveLocationInfo">No position has been shared yet.</p><p id="liveTrackingState"></p><a id="liveMapLink" class="hidden" target="_blank" rel="noopener noreferrer">Open last saved point in OpenStreetMap</a><div><button id="liveShowMap" type="button" class="outline-btn hidden">Show map (OpenStreetMap)</button></div></div>
+          <div id="liveMapWrap" class="hidden"></div>
+          <div class="live-meta"><div><small>LINK EXPIRY</small><strong id="liveExpires"></strong></div><div><small id="liveSeenLabel">CONTACT DASHBOARD LAST SEEN</small><strong id="liveSeen">Not opened yet</strong></div></div>
+          <div id="liveOwnerControls">
+            <div class="live-actions"><button id="liveResume" class="primary" type="button">Enable location</button><button id="livePause" class="outline-btn" type="button" disabled>Pause location</button></div><p class="field-help">Pausing keeps the last saved point visible. End sharing to revoke access and delete this session.</p>
+            <div class="live-link"><label for="liveShare" class="label">Private contact link</label><input id="liveShare" class="field" readonly placeholder="Create a new link to share this session"><div class="live-actions"><button id="liveCopy" class="outline-btn" type="button" disabled>Copy link</button><a id="liveOpen" class="outline-btn hidden" target="_blank" rel="noopener noreferrer">Open contact view</a><button id="liveRotate" class="outline-btn" type="button">Replace private link</button></div><p class="field-help live-link-warning">Anyone with this link can view your location and acknowledge alerts. Replacing it immediately revokes the previous link. After a refresh, replace the link to get a new copy.</p></div>
+            <div class="live-actions"><button id="liveSOS" class="live-danger" type="button">Send SOS to dashboard</button><button id="liveEnd" class="outline-btn live-danger-outline" type="button">End sharing & delete</button></div>
+          </div>
+          <div id="liveContactControls" class="hidden"><p>Contact the traveller directly if you are concerned. An old or missing location does not prove they are unsafe or safe.</p><button id="liveNotify" class="outline-btn" type="button">Enable dashboard notifications</button><p id="liveNotifyNote" class="field-help">Optional browser notifications work while this dashboard is open and the browser permits them.</p><a href="tel:112" class="live-call">Emergency in India? Call 112</a></div>
+        </div>
+        <div class="live-stack"><div class="live-panel"><span class="eyebrow">CHECK-IN PLAN</span><h2 style="margin-top:11px" id="liveDueTitle">Choose a deadline</h2><p id="liveDueTime" class="live-due">Not armed</p><p id="liveDueNote">A missed deadline creates an alert on your contact dashboard.</p><div id="liveTimerControls"><label class="label" for="liveTimerMinutes">Check in within</label><div class="live-actions"><select id="liveTimerMinutes" class="field"><option value="5">5 minutes</option><option value="15" selected>15 minutes</option><option value="30">30 minutes</option><option value="60">1 hour</option></select><button id="liveArm" class="outline-btn" type="button">Set deadline</button></div><button id="liveCheckin" class="primary full" type="button" style="margin-top:11px">I'm safe · resolve alerts</button><p class="field-help">Check in again after a deadline is missed. Checking in resolves your active alerts; your contact can see that status.</p></div></div>
+          <div class="live-panel"><div class="panel-title-row"><h2 style="margin:0">Alert timeline</h2><span class="pill neutral">5s REFRESH</span></div><p id="liveDeliveryNote">Saved alerts are visible to anyone with your active link. “Acknowledged” means someone with the link pressed the button.</p><div id="liveAlerts" aria-live="polite"><div class="live-empty">No alerts yet. Your check-in plan and SOS appear here.</div></div><p class="field-help" id="liveSync"></p></div>
+        </div>
+      </div>
+      <div id="liveUnavailable" class="live-panel hidden"><h2 id="liveUnavailableTitle">This sharing link is unavailable</h2><p id="liveUnavailableText"></p><button id="liveRetry" type="button" class="outline-btn">Try again</button><p><a href="tel:112" class="live-call">Call 112 in India if you are in immediate danger.</a></p></div>
+      <dialog id="liveConfirm" class="live-dialog" aria-labelledby="liveConfirmTitle"><h2 id="liveConfirmTitle"></h2><p id="liveConfirmText"></p><div class="live-actions"><button id="liveCancel" type="button" class="outline-btn">Cancel</button><button id="liveConfirmAction" type="button" class="live-danger">Confirm</button></div></dialog>
+    </section>
+    <section class="page active" id="page-home">
+      <div class="topline"><div><div class="eyebrow">YOUR TRIP, YOUR TERMS</div><h1>Hey, explorer <span style="color:#d69d65">✳</span></h1><p>A little preparation. A lot more peace of mind.</p></div><button class="primary" data-add-trip>+ Add trip</button></div>
+      <div id="nextTrip" class="card next-trip hidden" aria-live="polite"></div>
+      <div class="live-summary"><div><strong>Stay connected, on your terms.</strong><p>Live location sharing, missed check-in alerts, and SOS for a trusted contact. Private links expire automatically.</p></div><button class="primary" data-go="safety">Open live safety →</button></div>
+      <div class="hero-grid">
+        <div class="hero"><div class="eyebrow">YOUR SAFETY COMPANION</div><h2>The best plan is one that can change.</h2><p>Unexpected detour? Suspicious message? Need help without drawing attention? Start here.</p><button class="primary hero-btn" data-go="plan">Build my Plan B ↗</button></div>
+        <div class="card check-card"><div><div class="eyebrow">YOUR NEXT CHECK-IN</div><div class="check-intro"><div class="check-icon">⌁</div><div><div class="card-heading">Keep someone in the loop</div><div class="card-sub" style="margin-top:5px">Choose a deadline in your live safety session.</div></div></div></div><div class="check-status"><button class="primary check-btn" data-go="safety">Set up a live check-in →</button><p class="tiny-note">Alerts appear on your trusted contact’s open dashboard.</p></div></div>
+      </div>
+      <div class="quick-grid">
+        <button class="quick-card" data-go="verify"><div class="quick-icon" style="background:var(--gold)">◈</div><h3>Verify first</h3><p>Check a suspicious booking or payment message.</p><div class="quick-link">Inspect a message →</div></button>
+        <button class="quick-card" data-go="plan"><div class="quick-icon" style="background:#e4eee6">↗</div><h3>Have a Plan B</h3><p>Choose what to do when plans fall apart.</p><div class="quick-link">Prepare a backup →</div></button>
+        <button class="quick-card" data-go="help"><div class="quick-icon" style="background:var(--rose)">♡</div><h3>Get help discreetly</h3><p>Keep useful phrases and next steps ready.</p><div class="quick-link">Open help card →</div></button>
+      </div>
+      <div class="card summary-card"><div class="summary-top"><div><div class="eyebrow" style="margin-bottom:5px">YOUR TRIP, AT A GLANCE</div><div class="card-heading">Small steps, more options.</div></div><span style="font-size:21px">✳</span></div><div class="metrics"><div class="metric"><div class="metric-label">BOOKING</div><strong>Confirm directly</strong><small>Use the original platform</small></div><div class="metric"><div class="metric-label">BACKUP</div><strong>Pick a fallback</strong><small>Before you need one</small></div><div class="metric"><div class="metric-label">SUPPORT</div><strong>Save a help card</strong><small>Make it yours</small></div></div></div>
+    </section>
+    <section class="page" id="page-trips" aria-labelledby="tripsTitle">
+      <button class="back-btn" data-go="home">← Back to overview</button><div class="eyebrow">MY TRIPS / 04</div><h1 class="page-title" id="tripsTitle">Every journey, <span style="color:#6c9a7b">planned your way.</span></h1><p class="page-lead">Add the trips you have coming up. Keep your stay, dates, and trusted contact in one place, then start live safety or a Plan B for any trip in one tap.</p>
+      <div class="two-col">
+        <form id="tripForm" class="card" novalidate><div class="panel-title" style="margin-bottom:20px">Add a trip</div>
+          <div class="field-wrap"><label class="label" for="tripName">Trip name</label><input id="tripName" class="field" maxlength="60" required placeholder="e.g. Weekend in Jaipur" autocomplete="off"></div>
+          <div class="field-wrap"><label class="label" for="tripDestination">Destination</label><input id="tripDestination" class="field" maxlength="80" required placeholder="City or region" autocomplete="off"></div>
+          <div class="live-field-row"><div><label class="label" for="tripStart">Start date</label><input id="tripStart" type="date" class="field" required></div><div><label class="label" for="tripEnd">End date</label><input id="tripEnd" type="date" class="field" required></div></div>
+          <div class="field-wrap"><label class="label" for="tripStay">Where I'm staying (optional)</label><input id="tripStay" class="field" maxlength="120" placeholder="Hotel, hostel, or host name" autocomplete="off"></div>
+          <div class="field-wrap"><label class="label" for="tripContact">Trusted contact label (optional)</label><input id="tripContact" class="field" maxlength="60" placeholder="e.g. My sister" autocomplete="off"></div>
+          <div class="field-wrap"><label class="label" for="tripNotes">Notes (optional)</label><textarea id="tripNotes" rows="3" class="field" maxlength="400" placeholder="Booking reference, check-in time, transport plans…"></textarea><p class="field-help">Don't save passwords, OTPs, card or passport numbers. Trips are saved privately to this browser.</p></div>
+          <button id="tripSave" class="primary full" type="submit">Save trip ✈</button>
+        </form>
+        <div class="card"><div class="panel-title-row"><div class="eyebrow">YOUR TRIPS</div><span id="tripCount" class="pill neutral">0 TRIPS</span></div>
+          <div id="tripsLoading" class="live-loading">Loading your trips…</div>
+          <div id="tripsEmpty" class="result-empty hidden"><div class="empty-icon">✈</div><strong>No trips yet</strong><p>Add your first trip and it will appear here.</p></div>
+          <div id="tripList" class="trip-list"></div>
+        </div>
+      </div>
+    </section>
+    <section class="page" id="page-verify">
+      <button class="back-btn" data-go="home">← Back to overview</button><div class="eyebrow">SAFEEXIT VERIFY / 01</div><h1 class="page-title">Pause before you pay.</h1><p class="page-lead">Booking scams can look convincing. Examine warning signs, compare details, then verify through a channel you already trust.</p>
+      <div class="two-col">
+        <div class="card"><div class="panel-title-row"><div class="panel-title">Inspect a message</div></div>
+          <div class="field-wrap"><label class="label" for="msgText">Message received</label><textarea id="msgText" rows="6" class="field" placeholder="Paste a message here, with sensitive details removed."></textarea><p class="field-help">Remove sensitive details. Never enter passwords, OTPs, or card details.</p></div>
+          <button id="analyzeBtn" class="primary full">Check warning signs ↗</button><div class="button-row"><button id="clearMessage" class="outline-btn">Clear text</button></div>
+        </div>
+        <div class="card"><div class="eyebrow" style="margin-bottom:12px">YOUR RESULT</div><div id="verifyEmpty" class="result-empty"><div class="empty-icon">⌕</div><strong>Nothing checked yet</strong><p>Paste a message and check it for warning signs.</p></div><div id="verifyResult" class="hidden"><div id="resultPill" class="pill amber" style="margin-bottom:12px"></div><h2 id="resultTitle" class="result-title"></h2><p id="resultSummary" class="result-summary"></p><div class="eyebrow" style="margin-top:20px">WHAT WE NOTICED</div><div id="resultFlags" class="result-flags"></div><div class="next-box"><strong>Your safest next step</strong><p id="resultNext"></p></div><p class="notice">Text-based guidance, not a live link scan or definitive scam verdict. A clean result does not prove a message is safe.</p></div></div>
+      </div>
+    </section>
+    <section class="page" id="page-plan">
+      <button class="back-btn" data-go="home">← Back to overview</button><div class="eyebrow">PLAN B PROTOCOL / 02</div><h1 class="page-title">If plans change, <span style="color:#6c9a7b">you still have options.</span></h1><p class="page-lead">Prepare your next move before a cancellation, missed connection, or unexpected detour.</p>
+      <div class="two-col">
+        <div class="card"><div class="panel-title" style="margin-bottom:20px">Build your backup plan</div>
+          <div class="field-wrap"><label class="label" for="disruption">What changed?</label><select id="disruption" class="field"><option value="transport">My taxi or bus is unavailable</option><option value="closed">My planned destination is closed</option><option value="late">I'm running late for check-in</option><option value="lost">I feel unsure about my current location</option></select></div>
+          <div class="field-wrap"><label class="label" for="fallback">My fallback place</label><input id="fallback" class="field" value="A staffed, well-lit public venue I have verified"></div>
+          <div class="field-wrap"><label class="label" for="deadline">When should I reassess?</label><select id="deadline" class="field"><option>In 10 minutes</option><option>In 15 minutes</option><option>In 30 minutes</option><option>Immediately</option></select></div>
+          <div class="field-wrap"><label class="label" for="contactName">Trusted contact label (optional)</label><input id="contactName" class="field" placeholder="e.g. My travel buddy"></div>
+          <button id="buildPlan" class="primary full">Build my Plan B ↗</button><p class="field-help">No live location or route safety claims. Choose a fallback you can independently verify.</p>
+        </div>
+        <div class="card"><div class="eyebrow" style="margin-bottom:13px">YOUR CONTINGENCY CARD</div><div id="planEmpty" class="result-empty"><div class="empty-icon">↗</div><strong>Ready when you are</strong><p>Your custom steps will appear here.</p></div><div id="planResult" class="hidden"><div class="backup-box"><div class="eyebrow">YOUR FALLBACK</div><strong id="planFallback"></strong><p id="planDeadline"></p></div><div id="planSteps" class="step-list"></div><div class="contact-box"><strong>Contact plan</strong><p id="planContact"></p></div><button id="copyPlan" class="outline-btn full" style="margin-top:14px">Show plan text to copy</button><textarea id="copyArea" class="field hidden" rows="8" style="margin-top:10px" readonly></textarea><p id="copyNote" class="notice">Your plan stays on this page; no message is sent.</p></div></div>
+      </div>
+    </section>
+    <section class="page" id="page-help">
+      <button class="back-btn" data-go="home">← Back to overview</button><div class="eyebrow">DISCREET HELP / 03</div><h1 class="page-title">You don't have to explain everything.</h1><p class="page-lead">Prepare a small, private set of words and next steps you can use when you feel uncomfortable or need assistance.</p>
+      <div class="two-col">
+        <div class="card"><div class="panel-title" style="margin-bottom:18px">What kind of help do you need?</div><div class="help-options">
+          <button class="help-option" data-help="staff"><span class="option-icon">▣</span><span><strong>Find a staffed public place</strong><small>Hotel desk, shop, reception or another staffed venue</small></span><span class="arrow">→</span></button>
+          <button class="help-option" data-help="contact"><span class="option-icon">♡</span><span><strong>Contact someone I trust</strong><small>Prepare a clear, short request for help</small></span><span class="arrow">→</span></button>
+          <button class="help-option" data-help="language"><span class="option-icon">文</span><span><strong>Ask for help in simple words</strong><small>A phrase you can show or say</small></span><span class="arrow">→</span></button>
+          <button class="help-option" data-help="emergency"><span class="option-icon">!</span><span><strong>I need urgent assistance</strong><small>See emergency guidance for India</small></span><span class="arrow">→</span></button>
+        </div><div class="contact-box" style="margin-top:18px"><strong>Make it yours</strong><div class="field-wrap" style="margin:12px 0 0"><label class="label" for="helpAddress">Accommodation / meeting point (optional)</label><input id="helpAddress" class="field" placeholder="Add details for your own help card"></div></div></div>
+        <div class="card"><div class="eyebrow" style="margin-bottom:12px">YOUR PRIVATE HELP CARD</div><div id="helpEmpty" class="result-empty"><div class="empty-icon">♡</div><strong>Choose what you need</strong><p>Your selected phrase and next steps will appear here.</p></div><div id="helpResult" class="hidden"><div id="helpEmoji" style="font-size:32px;margin-bottom:10px">♡</div><h2 id="helpTitle" class="result-title"></h2><div id="helpPhrase" class="phrase"></div><div class="eyebrow" style="margin-top:20px">NEXT STEPS</div><div id="helpSteps" class="step-list"></div><div id="helpLocation" class="contact-box hidden"><div class="eyebrow">YOUR SAVED DETAIL</div><p id="helpLocationText"></p></div><button id="editHelp" class="outline-btn full" style="margin-top:15px">Choose another help option</button></div><div class="notice" style="border-top:1px solid var(--line);padding-top:13px;margin-top:17px">If you are in immediate danger in India, call 112 if you can. This help card does not place calls or contact anyone. Move towards a safer public place if possible.</div></div>
+      </div>
+    </section>
+    <footer class="footer"><span>SafeExit · Travel with a Plan B</span><span>Choice, preparation &amp; privacy. Alerts require an open contact dashboard.</span></footer>
+  </main>
+</div>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<script src="app.js" defer></script>
+<script src="safety.js" defer></script>
+<script src="trips.js" defer></script>
+</body>
+</html>
